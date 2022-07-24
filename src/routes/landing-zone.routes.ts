@@ -44,11 +44,13 @@ router.get(
 
 // Function to update
 export const isValidLandingZone = ({ R1: arr1, R2: arr2 }: ICoordinates) => {
+  //  if all the coordinates shared by rover, R2, is includes in the list of coordinates shared by other rover, R1, then that landing zone is good to go
   const valid: boolean[] = [];
   for (let i = 0; i < arr2.length; i++) {
     for (let j = 0; j < arr1.length; j++) {
       if (arr2[i] === arr1[j]) {
         valid.push(true);
+        break;
       }
     }
   }

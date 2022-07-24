@@ -48,7 +48,7 @@ const findShortestPath = (
   // track paths using a hash object
   const parents: Record<string, string | null> = { [endNode]: null };
   for (const child in paths[startNode]) {
-    parents[child] = startNode;
+    parents[child] = startNode
   }
 
   // collect visited nodes
