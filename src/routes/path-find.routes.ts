@@ -85,7 +85,7 @@ const findShortestPath = (
   // record the shortest path
   const shortestPath = [endNode];
   let parent = parents[endNode];
-  while (parent) {
+  while (parent && !shortestPath.includes(parent)) {
     shortestPath.push(parent);
     parent = parents[parent];
   }
